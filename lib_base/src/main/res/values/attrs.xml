@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--圆角图片-->
+    <declare-styleable name="RoundAngleImageView">
+        <attr name="roundWidth" format="dimension" />
+        <attr name="roundHeight" format="dimension" />
+    </declare-styleable>
+
+    <attr name="app_primary_color" format="color" /> <!-- topbar -->
+    <attr name="app_content_bg_color" format="color" /> <!-- content-->
+
+    <declare-styleable name="ExpandableTextView">
+        <attr name="expandable_text_color" format="color|reference" />
+        <attr name="expandable_text_size" format="dimension" />
+        <attr name="expandable_text" format="string" />
+        <attr name="expandable_text_font" format="reference"/>
+        <attr name="expandable_text_line_spacing_extra" format="dimension" />
+        <attr name="expandable_text_collapsedLines" format="integer" />
+        <attr name="expandable_gradient_view_height" format="dimension" />
+    </declare-styleable>
+
+</resources>

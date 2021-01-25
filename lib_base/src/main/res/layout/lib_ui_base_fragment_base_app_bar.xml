@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/base_fragment_appbarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_navigation"
+        android:orientation="vertical"
+        app:elevation="0dp">
+
+        <RelativeLayout
+            android:id="@+id/base_fragment_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_gray">
+
+            <TextView
+                android:id="@+id/base_fragment_back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"
+                android:drawableLeft="@drawable/ic_arrow_back"
+                android:drawablePadding="@dimen/dp_10"
+                android:gravity="center"
+                android:paddingStart="@dimen/dp_10"
+                android:paddingEnd="@dimen/dp_10" />
+
+            <TextView
+                android:id="@+id/base_fragment_title"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxWidth="200dp"
+                android:maxLines="1"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold"
+                tools:text="Title" />
+
+
+            <TextView
+                android:id="@+id/base_fragment_share"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:drawableRight="@drawable/ic_share"
+                android:drawablePadding="@dimen/dp_4"
+                android:paddingStart="@dimen/dp_10"
+                android:paddingEnd="@dimen/dp_10" />
+
+        </RelativeLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+</LinearLayout>

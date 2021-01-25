@@ -1,0 +1,64 @@
+<resources>
+    <!-- Base application theme. -->
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="QMUI.Compat.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/themeColor</item>
+        <item name="colorPrimaryDark">@color/themeColor</item>
+        <item name="colorAccent">@color/icon_blue_light</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <!--Android 5.x开始需要把颜色设置透明，否则导航栏会呈现系统默认的浅灰色-->
+        <item name="android:statusBarColor">@color/transparent_complete</item>
+    </style>
+
+
+    <!--引导页主题-->
+    <style name="AppTheme.Splash">
+        <item name="android:windowNoTitle">true</item>
+        <item name="background">@drawable/bg_splash</item>
+        <item name="android:windowAnimationStyle">@style/Anim_Activity_fade_in_out</item>
+    </style>
+
+    <!--主页主题-->
+    <style name="AppTheme.Main">
+        <item name="android:windowAnimationStyle">@style/Anim_Activity_side_in_out</item>
+    </style>
+
+    <!--启动页动画-->
+    <style name="Anim_Activity_fade_in_out" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/fade_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/fade_out</item>
+        <item name="android:activityCloseEnterAnimation">@anim/fade_in</item>
+        <item name="android:activityCloseExitAnimation">@anim/fade_out</item>
+    </style>
+
+    <!--主题动画-->
+    <style name="Anim_Activity_side_in_out" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_in_right</item>
+        <item name="android:activityOpenExitAnimation">@anim/slide_out_left</item>
+        <item name="android:activityCloseEnterAnimation">@anim/slide_in_left</item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_out_right</item>
+    </style>
+
+    <style name="text_style_bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="text_style_normal">
+        <item name="android:textStyle">normal</item>
+    </style>
+
+
+    <style name="tabLayout_style">
+        <item name="android:textSize">@dimen/sp_12</item>
+    </style>
+
+    <style name="myRatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:minHeight">50dp</item>
+        <item name="android:maxHeight">50dp</item>
+    </style>
+
+
+
+</resources>

@@ -1,0 +1,151 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+    buildToolsVersion rootProject.ext.android["buildToolsVersion"]
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android["minSdkVersion"]
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
+        versionCode rootProject.ext.android["versionCode"]
+        versionName rootProject.ext.android["versionName"]
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+
+        //ARouter
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments += [AROUTER_MODULE_NAME  : project.getName(), "room.schemaLocation": "$projectDir/schemas".toString()]
+
+            }
+        }
+        //视图绑定可以替换butterknife
+        viewBinding {
+            enabled = true
+        }
+        multiDexEnabled true
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    //支持java8
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+
+    // For Kotlin projects
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.google.android:flexbox:2.0.1'
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.0.5'
+
+
+
+
+
+    api rootProject.ext.dependencies["constraint_layout"]
+    api rootProject.ext.dependencies["qmui"]
+    api rootProject.ext.dependencies["qmui-arch"]
+    api rootProject.ext.dependencies["annotations"]
+    api rootProject.ext.dependencies["utilcode"]
+    api rootProject.ext.dependencies["MZBannerView"]
+    api rootProject.ext.dependencies["BaseRecyclerViewAdapterHelper"]
+    api rootProject.ext.dependencies["xpopup"]
+    api rootProject.ext.dependencies["autosize"]
+    api rootProject.ext.dependencies["kotlinx_coroutines_android"]
+    api rootProject.ext.dependencies["ktx_core"]
+    api rootProject.ext.dependencies["kotlin_stdlib_jdk7"]
+
+    api rootProject.ext.dependencies["immersionbar"]
+    api rootProject.ext.dependencies["immersionbar_components"]
+    api rootProject.ext.dependencies["FlycoTabLayout"]
+    api rootProject.ext.dependencies["SuperTextViewPro"]
+    api rootProject.ext.dependencies["SuperTextView"]
+    api rootProject.ext.dependencies["pickerview"]
+    api rootProject.ext.dependencies["calendarview"]
+    api rootProject.ext.dependencies["viewpager2"]
+
+
+    api rootProject.ext.dependencies["appcompat"]
+    api rootProject.ext.dependencies["material"]
+    api rootProject.ext.dependencies["kotlin_stdlib_jdk7"]
+    api rootProject.ext.dependencies["cardview"]
+    api rootProject.ext.dependencies["recyclerview"]
+    api rootProject.ext.dependencies["annotations"]
+    api rootProject.ext.dependencies["SmartRefreshLayout"]
+    api rootProject.ext.dependencies["PictureSelector"]
+
+    api rootProject.ext.dependencies["glide"]
+    api rootProject.ext.dependencies["rxpermissions2"]
+    api rootProject.ext.dependencies["fragmentation"]
+    api rootProject.ext.dependencies["eventbus"]
+    //腾讯文档浏览
+    api rootProject.ext.dependencies["tbs"]
+    api rootProject.ext.dependencies["SimpleRatingBar"]
+    api rootProject.ext.dependencies["panelSwitchHelper"]
+    //文件下载
+    api rootProject.ext.dependencies["okdownload"]
+    api rootProject.ext.dependencies["okdownload_sqlite"]
+    api rootProject.ext.dependencies["okdownload_okhttp"]
+
+    //rxbinding
+    api rootProject.ext.dependencies["rxbinding_core"]
+    api rootProject.ext.dependencies["rxbinding_appcompat"]
+
+    //android jetpack
+    api rootProject.ext.dependencies["lifecycle_viewmodel"]
+    api rootProject.ext.dependencies["lifecycle_livedata"]
+    api rootProject.ext.dependencies["navigation_fragment"]
+    api rootProject.ext.dependencies["navigation_ui"]
+    api rootProject.ext.dependencies["lifecycle_viewmodel"]
+    api rootProject.ext.dependencies["lifecycle_livedata"]
+
+    //arouter
+    api rootProject.ext.dependencies["arouter"]
+    api rootProject.ext.dependencies["dagger_hilt"]
+    annotationProcessor rootProject.ext.dependencies["arouter-compiler"]
+    kapt rootProject.ext.dependencies["arouter-compiler"]
+
+    //RecyclerView 分割线recyclerview-divider
+    api rootProject.ext.dependencies["recyclerview-divider"]
+
+    //极光推送
+//    api rootProject.ext.dependencies["jpush"]
+//    api rootProject.ext.dependencies["jcore"]
+
+//    implementation rootProject.ext.dependencies["chart"]
+    api rootProject.ext.dependencies["chart"]
+    //flexbox流式布局
+    api rootProject.ext.dependencies["flexbox"]
+
+    //bugly
+    api rootProject.ext.dependencies["bugly_crashreport"]
+    api rootProject.ext.dependencies["bugly_nativecrashreport"]
+
+    //文件下载
+    api rootProject.ext.dependencies["filedownloader"]
+
+    api rootProject.ext.dependencies["multidex"]
+    api rootProject.ext.dependencies["banner"]
+    api rootProject.ext.dependencies["shimmerlayout"]
+    api rootProject.ext.dependencies["lifecycle_runtime"]
+    api rootProject.ext.dependencies["animlogoview"]
+//    api rootProject.ext.dependencies["live_eventBus"]
+
+}

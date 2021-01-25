@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_splash">
+
+    <com.seagazer.animlogoview.AnimLogoView
+        android:id="@+id/animLogo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:autoPlay="false"
+        app:gradientAnimDuration="1000"
+        app:gradientColor="@color/colorAccent"
+        app:logoName="吃堂欢迎你"
+        app:offsetAnimDuration="1500"
+        app:showGradient="true"
+        app:textColor="@color/qmui_config_color_red"
+        app:textSize="@dimen/sp_30" />
+
+</LinearLayout>

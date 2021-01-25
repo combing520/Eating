@@ -1,0 +1,9 @@
+include ':tickets'
+include ':goods'
+include ':discount'
+include ':discounts'
+include ':lib_service'
+include ':lib_net'
+include ':lib_base'
+include ':app'
+rootProject.name = "Eating"

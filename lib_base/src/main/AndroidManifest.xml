@@ -1,0 +1,14 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.ccwb.lib_base">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <application>
+
+        <meta-data
+            android:name="cn.ccwb.lib_base.BaseModuleConfig"
+            android:value="ConfigModule">
+
+        </meta-data>
+
+    </application>
+</manifest>
