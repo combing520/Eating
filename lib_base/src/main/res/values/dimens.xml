@@ -29,6 +29,7 @@
     <dimen name="dp_5">5dp</dimen>
     <dimen name="sp_11">11sp</dimen>
     <dimen name="dp_6">6dp</dimen>
+    <dimen name="dp_3">3dp</dimen>
 
     <dimen name="dp_tab_layout_height">40dp</dimen>
 

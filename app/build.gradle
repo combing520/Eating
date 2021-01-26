@@ -66,8 +66,8 @@ android {
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation 'androidx.appcompat:appcompat:1.2.0'
-    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.0.5'
 
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.0.5'
     implementation project(path: ':lib_net')
     implementation project(path: ':lib_service')
     implementation project(path: ':lib_base')
@@ -75,6 +75,10 @@ dependencies {
 
     if (!IS_APPLICATION.toBoolean()) {
         implementation project(path: ':goods')
+        implementation project(path: ':tickets')
+        implementation project(path: ':usercenter')
+        implementation project(path: ':tickets')
+        implementation project(path: ':order')
     }
 
     annotationProcessor rootProject.ext.dependencies["arouter-compiler"]

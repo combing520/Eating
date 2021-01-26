@@ -11,7 +11,7 @@ import me.yokeyword.fragmentation.anim.DefaultHorizontalAnimator
 import me.yokeyword.fragmentation.anim.FragmentAnimator
 
 /**
- * 门票
+ * 优惠券
  */
 @Route(path = RouterPath.PAGE_GUIDE_TICKETS)
 class TicketsContainerActivity : BaseActivityPlusWithoutPresenter() {

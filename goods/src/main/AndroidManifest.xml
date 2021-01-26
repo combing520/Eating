@@ -7,6 +7,18 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme" />
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true" />
+
+    <meta-data
+        android:name="cn.ccwb.cloud.goods.config.GoodsModuleConfig"
+        android:value="ConfigModule" />
+
+
+    <activity
+        android:name="cn.ccwb.cloud.goods.activity.GoodsContainerActivity"
+        android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation|keyboardHidden"
+        android:screenOrientation="portrait" />
+
 
 </manifest>

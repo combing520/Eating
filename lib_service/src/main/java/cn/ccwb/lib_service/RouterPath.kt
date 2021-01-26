@@ -29,9 +29,24 @@ object RouterPath {
 
     //-----------------优惠券 bgin-----------//
     const val PAGE_GUIDE_TICKETS = "/tickets/guide"
+    const val PAGE_TICKET_NEAR = "/tickets/near"
+    const val PAGE_TICKET_DETAIL = "/tickets/detail"
 
     //-----------------优惠券 end-----------//
 
+    //-----------------用户中心 begin-----------//
+    const val PAGE_GUIDE_USERCENTER = "/usercenter/guide"
+    const val PAGE_USERCENTER_HOME = "/usercenter/home"
+    const val PAGE_USERCENTER_MESSAGE = "/usercenter/message"
+    const val PAGE_USERCENTER_MESSAGE_DETAIL = "/usercenter/message/detail"
+    const val PAGE_USERCENTER_FOOT_PRINT = "/usercenter/foot_print"
+    const val PAGE_USERCENTER_COLLECTION = "/usercenter/collection"
+    //-----------------用户中心 end-----------//
+
+    //-----------------订单 begin-----------//
+    const val PAGE_GUIDE_ORDER = "/order/guide"
+    const val PAGE_ORDER_LIST = "/order/list"
+    //-----------------订单 end-----------//
 
     private val sName2Path =
         HashMap<String, String?>()
@@ -43,10 +58,17 @@ object RouterPath {
             ERROR_PAGE
         }
     }
-
     init {
         sName2Path["首页"] = PAGE_MAIN
-        sName2Path["打折"] = PAGE_GOODS_DISCOUNT
+        sName2Path["优惠套餐"] = PAGE_GOODS_DISCOUNT
+        sName2Path["附近好券"] = PAGE_TICKET_NEAR
+        sName2Path["优惠券详情"] = PAGE_TICKET_DETAIL
+        sName2Path["用户中心"] = PAGE_USERCENTER_HOME
+        sName2Path["系统通知"] = PAGE_USERCENTER_MESSAGE
+        sName2Path["通知详情"] = PAGE_USERCENTER_MESSAGE_DETAIL
+        sName2Path["我的足迹"] = PAGE_USERCENTER_FOOT_PRINT
+        sName2Path["我的收藏"] = PAGE_USERCENTER_COLLECTION
+        sName2Path["我的订单"] = PAGE_ORDER_LIST
 
     }
 }

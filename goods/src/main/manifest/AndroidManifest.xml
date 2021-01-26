@@ -4,7 +4,7 @@
     <application android:usesCleartextTraffic="true">
 
         <meta-data
-            android:name="cn.ccwb.cloud.goods.config.DiscountModuleConfig"
+            android:name="cn.ccwb.cloud.goods.config.GoodsModuleConfig"
             android:value="ConfigModule" />
 
 

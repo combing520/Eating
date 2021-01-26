@@ -14,7 +14,7 @@
     <!--倒计时背景点击颜色-->
     <color name="colorTimerPress">#666666</color>
     <!--title文字颜色-->
-    <color name="colorTxtTitle">#000000</color>
+    <color name="colorTxtTitle">#222222</color>
     <!--content文字颜色-->
     <color name="colorTxtContent">#666666</color>
     <!--label文字颜色-->

@@ -1,0 +1,17 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.ccwb.cloud.usercenter">
+
+    <application android:usesCleartextTraffic="true">
+
+        <meta-data
+            android:name="cn.ccwb.cloud.usercenter.config.UserCenterModuleConfig"
+            android:value="ConfigModule" />
+
+        <activity
+            android:name="cn.ccwb.cloud.usercenter.activity.UserCenterContainerActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation|keyboardHidden"
+            android:screenOrientation="portrait" />
+
+    </application>
+
+</manifest>

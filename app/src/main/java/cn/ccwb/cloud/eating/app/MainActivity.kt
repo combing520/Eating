@@ -3,8 +3,10 @@ package cn.ccwb.cloud.eating.app
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Gravity
+import cn.ccwb.lib_base.aop.click.AopOnclick
 import cn.ccwb.lib_base.utils.GlideUtils
 import cn.ccwb.lib_service.RouterPath
+import com.alibaba.android.arouter.facade.Postcard
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
 import com.blankj.utilcode.util.AppUtils
@@ -50,9 +52,14 @@ class MainActivity : AppCompatActivity() {
                 recommendTv.textScaleX = 1.0f
             }
         }
-
         discount_ll.setOnClickListener {
-            goToPage("打折", "", true)
+            goToPage(MenuType.TYPE_DISCOUNT, "优惠套餐", "", true)
+        }
+        near_tickets_ll.setOnClickListener {
+            goToPage(MenuType.TYPE_TICKET, "附近好券", "", true)
+        }
+        userAvatarImg.setOnClickListener {
+            goToPage(MenuType.TYPE_USER, "用户中心", "", true)
         }
 
     }
@@ -72,6 +79,9 @@ class MainActivity : AppCompatActivity() {
             "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.to8to.com%2Fcase%2F1511%2F07%2F20151107_8704abe48ae6a2082920wtt45gsqawqs.jpg&refer=http%3A%2F%2Fpic.to8to.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1613894626&t=0235df7b50d4a78144514815770a33a2"
         val goods3Path =
             "https://ss1.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/baike/pic/item/a8773912b31bb051ec066d183d7adab44aede0e4.jpg"
+
+        val userAvatarPath =
+            "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fn1.itc.cn%2Fimg8%2Fwb%2Frecom%2F2016%2F05%2F13%2F146310949475222613.PNG&refer=http%3A%2F%2Fn1.itc.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1614236052&t=44dc308424a03f372dd9ce15109ea553"
 
         GlideUtils.loadNetPic(
             picPath,
@@ -97,19 +107,37 @@ class MainActivity : AppCompatActivity() {
         GlideUtils.loadNetPic(
             goods3Path, this@MainActivity, goods03Img, R.drawable.img_default_banner
         )
+        GlideUtils.loadNetPic(
+            userAvatarPath, this@MainActivity, userAvatarImg, R.drawable.img_default_menu
+        )
     }
 
-
-    private fun goToPage(pathName: String, id: String, fitSystem: Boolean) {
+    @AopOnclick
+    private fun goToPage(enumType: MenuType, pathName: String, id: String, fitSystem: Boolean) {
         if (RouterPath.matchName2Path(pathName).equals(RouterPath.ERROR_PAGE)) {
             ToastUtils.showShort("该功能正在开发中...")
         } else {
             //其他的
-            ARouter.getInstance().build(RouterPath.PAGE_GUIDE_GOODS)
-                .withString(RouterPath.TAG_PATH_FRAGMENT, RouterPath.matchName2Path(pathName))
-                .withString(RouterPath.TAG_ID, id)
-                .withBoolean(RouterPath.TAG_FIT_SYSTEM, fitSystem)
-                .navigation()
+            val route = ARouter.getInstance()
+            var postCard: Postcard? = null
+            when (enumType) {
+                MenuType.TYPE_DISCOUNT -> {
+                    postCard = route.build(RouterPath.PAGE_GUIDE_GOODS)
+                }
+                MenuType.TYPE_TICKET -> {
+                    postCard = route.build(RouterPath.PAGE_GUIDE_TICKETS)
+                }
+                MenuType.TYPE_RANK -> {
+
+                }
+                MenuType.TYPE_USER -> {
+                    postCard = route.build(RouterPath.PAGE_GUIDE_USERCENTER)
+                }
+            }
+            postCard?.withString(RouterPath.TAG_PATH_FRAGMENT, RouterPath.matchName2Path(pathName))
+                ?.withString(RouterPath.TAG_ID, id)
+                ?.withBoolean(RouterPath.TAG_FIT_SYSTEM, fitSystem)
+                ?.navigation()
         }
     }
 
@@ -131,4 +159,11 @@ class MainActivity : AppCompatActivity() {
         ToastUtils.setGravity(Gravity.CENTER, 0, 0)
         ToastUtils.showShort(msg)
     }
+}
+
+enum class MenuType {
+    TYPE_DISCOUNT,
+    TYPE_TICKET,
+    TYPE_RANK,
+    TYPE_USER
 }

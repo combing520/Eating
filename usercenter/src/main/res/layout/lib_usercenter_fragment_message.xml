@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/base_fragment_appbarLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <!--item begin-->
+    <LinearLayout
+        android:id="@+id/message_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:background="@drawable/bg_shape_radius_white"
+        android:orientation="vertical"
+        android:padding="@dimen/dp_16">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="09月12日"
+            android:textColor="@color/colorTxtLabel"
+            android:textSize="@dimen/sp_12" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:drawableRight="@drawable/lib_goods_right"
+            android:drawablePadding="@dimen/dp_4"
+            android:text="标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题"
+            android:textColor="@color/colorTxtTitle"
+            android:textSize="@dimen/sp_14" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="内容内容内容内容内容内容内容内容"
+            android:textColor="@color/colorTxtLabel"
+            android:textSize="@dimen/sp_12" />
+
+    </LinearLayout>
+    <!--item end-->
+
+
+    <!--item begin-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:background="@drawable/bg_shape_radius_white"
+        android:orientation="vertical"
+        android:padding="@dimen/dp_16">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="09月12日"
+            android:textColor="@color/colorTxtLabel"
+            android:textSize="@dimen/sp_12" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:drawableRight="@drawable/lib_goods_right"
+            android:drawablePadding="@dimen/dp_4"
+            android:text="标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题"
+            android:textColor="@color/colorTxtTitle"
+            android:textSize="@dimen/sp_14" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="内容内容内容内容内容内容内容内容"
+            android:textColor="@color/colorTxtLabel"
+            android:textSize="@dimen/sp_12" />
+
+    </LinearLayout>
+    <!--item end-->
+
+
+</LinearLayout>

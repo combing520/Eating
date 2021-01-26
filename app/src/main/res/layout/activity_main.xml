@@ -32,12 +32,13 @@
             android:textSize="@dimen/sp_14" />
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="@dimen/dp_35"
             android:layout_marginStart="@dimen/dp_8"
             android:layout_marginTop="@dimen/dp_8"
             android:layout_marginEnd="@dimen/dp_8"
             android:layout_marginBottom="@dimen/dp_8"
+            android:layout_weight="1"
             android:background="@drawable/bg_gray_raduis_middle"
             android:drawableStart="@drawable/ic_search_gray"
             android:gravity="center_vertical"
@@ -46,6 +47,15 @@
             android:text="搜索你感兴趣的话题"
             android:textColor="@color/colorTxtLabel"
             android:textSize="@dimen/sp_14" />
+
+        <cn.ccwb.lib_base.view.RoundAngleImageView
+            android:id="@+id/userAvatarImg"
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="@dimen/dp_30"
+            android:scaleType="centerCrop"
+            app:roundHeight="@dimen/dp_16"
+            app:roundWidth="@dimen/dp_16" />
+
     </LinearLayout>
 
 
@@ -112,6 +122,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/near_tickets_ll"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"

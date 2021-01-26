@@ -1,3 +1,5 @@
+include ':order'
+include ':usercenter'
 include ':tickets'
 include ':goods'
 include ':discount'
