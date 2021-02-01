@@ -5,9 +5,9 @@ package cn.ccwb.lib_net.http
  */
 object APIConstants {
 
-    const val BASE_URL_DEBUG: String = "https://appkp.ccwb.cn/api/"
+    const val BASE_URL_DEBUG: String = "https://apitest.yncul.com"
 
-    const val BASE_URL_RELEASE: String = "https://appkp.ccwb.cn/api/"
+    const val BASE_URL_RELEASE: String = "https://api.yncul.com"
 
     const val BASE_URL: String = "https://appkp.ccwb.cn/"
 

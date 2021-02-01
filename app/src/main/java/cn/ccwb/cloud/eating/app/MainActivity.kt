@@ -1,14 +1,16 @@
 package cn.ccwb.cloud.eating.app
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Gravity
+import androidx.appcompat.app.AppCompatActivity
 import cn.ccwb.lib_base.aop.click.AopOnclick
 import cn.ccwb.lib_base.utils.GlideUtils
 import cn.ccwb.lib_service.RouterPath
+import cn.ccwb.lib_service.map.LocationManager
 import com.alibaba.android.arouter.facade.Postcard
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
+import com.amap.api.location.AMapLocation
 import com.blankj.utilcode.util.AppUtils
 import com.blankj.utilcode.util.LogUtils
 import com.blankj.utilcode.util.ToastUtils
@@ -60,6 +62,9 @@ class MainActivity : AppCompatActivity() {
         }
         userAvatarImg.setOnClickListener {
             goToPage(MenuType.TYPE_USER, "用户中心", "", true)
+        }
+        restaurant_list.setOnClickListener {
+            goToPage(MenuType.TYPE_RESTAURANT, "餐厅排行", "", true)
         }
 
     }
@@ -127,11 +132,11 @@ class MainActivity : AppCompatActivity() {
                 MenuType.TYPE_TICKET -> {
                     postCard = route.build(RouterPath.PAGE_GUIDE_TICKETS)
                 }
-                MenuType.TYPE_RANK -> {
-
-                }
                 MenuType.TYPE_USER -> {
                     postCard = route.build(RouterPath.PAGE_GUIDE_USERCENTER)
+                }
+                MenuType.TYPE_RESTAURANT -> {
+                    postCard = route.build(RouterPath.PAGE_GUIDE_RESTAURANT)
                 }
             }
             postCard?.withString(RouterPath.TAG_PATH_FRAGMENT, RouterPath.matchName2Path(pathName))
@@ -141,6 +146,31 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun showToastCenter(msg: String) {
+        ToastUtils.setGravity(Gravity.CENTER, 0, 0)
+        ToastUtils.showShort(msg)
+    }
+
+
+    override fun onResume() {
+        super.onResume()
+        LocationManager.getInstance().startLocation()
+        if (LocationManager.getInstance().location != null) {
+            address.text = LocationManager.getInstance().location?.poiName
+            LocationManager.getInstance().stopLocation()
+        } else {
+
+            LocationManager.getInstance().setLocationCallback { aMapLocation: AMapLocation? ->
+                if (null != aMapLocation) {
+                    address.text = LocationManager.getInstance().location?.poiName
+                    LocationManager.getInstance().stopLocation()
+                } else {
+                    // TODO: 定位没有打开--需要提示用户
+                    showToastCenter("请打开定位")
+                }
+            }
+        }
+    }
 
     /**
      * 处理物理按键返回事件
@@ -154,16 +184,11 @@ class MainActivity : AppCompatActivity() {
             AppUtils.exitApp()
         }
     }
-
-    private fun showToastCenter(msg: String) {
-        ToastUtils.setGravity(Gravity.CENTER, 0, 0)
-        ToastUtils.showShort(msg)
-    }
 }
 
 enum class MenuType {
     TYPE_DISCOUNT,
     TYPE_TICKET,
-    TYPE_RANK,
-    TYPE_USER
+    TYPE_USER,
+    TYPE_RESTAURANT
 }

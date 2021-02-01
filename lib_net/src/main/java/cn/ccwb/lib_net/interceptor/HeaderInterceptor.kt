@@ -35,6 +35,7 @@ class HeaderInterceptor : Interceptor {
             .setEncodedQueryParameter(Constants.CW_IP_STR, Constants.IP)
             .setEncodedQueryParameter(Constants.CW_DEVICEMODEL_STR, Constants.CW_DEVICEMODEL)
             .setEncodedQueryParameter(Constants.CW_VERSION_STR, AppUtils.getAppVersionName())
+            .setEncodedQueryParameter(Constants.AD_CODE_STR, Constants.AD_CODE)
 
         val requestBuilder = original.newBuilder()
             .header("Content-Type", "application/json; charset=UTF-8")

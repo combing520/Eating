@@ -83,136 +83,19 @@
 
     </LinearLayout>
 
-    <!--item begin-->
-    <androidx.cardview.widget.CardView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/discount_goods_recycle"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dp_8"
-        android:layout_marginTop="@dimen/dp_8"
-        android:layout_marginEnd="@dimen/dp_8"
-        app:cardBackgroundColor="@color/colorWhite"
-        app:cardCornerRadius="@dimen/dp_5"
-        app:cardUseCompatPadding="true">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/dp_8"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:padding="@dimen/dp_8">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:drawableLeft="@drawable/lib_goods_shop"
-                    android:drawablePadding="@dimen/dp_4"
-                    android:gravity="center_vertical"
-                    android:text="鹤香楼牛肉面馆"
-                    android:textColor="@color/colorTxtContent"
-                    android:textSize="@dimen/sp_14" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1.3KM"
-                    android:textColor="@color/colorTxtContent"
-                    android:textSize="@dimen/sp_14" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <View
-                    android:layout_width="90dp"
-                    android:layout_height="90dp"
-                    android:layout_marginRight="@dimen/dp_8"
-                    android:background="#EDEDED" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical">
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:ellipsize="end"
-                            android:lines="1"
-                            android:text="传统小锅米线"
-                            android:textColor="@color/colorBlack"
-                            android:textSize="@dimen/sp_16" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:ellipsize="end"
-                            android:lines="1"
-                            android:text="半年销量2000+"
-                            android:textColor="@color/colorTxtLabel"
-                            android:textSize="@dimen/sp_12" />
-                    </LinearLayout>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ellipsize="end"
-                        android:lines="1"
-                        android:text="小吃"
-                        android:textColor="@color/colorTxtContent"
-                        android:textSize="@dimen/sp_14" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ellipsize="end"
-                        android:lines="1"
-                        android:text="周一至周日可用"
-                        android:textColor="@color/colorTxtContent"
-                        android:textSize="@dimen/sp_14" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="￥3.6"
-                            android:textColor="@color/qmui_config_color_red"
-                            android:textSize="@dimen/sp_20" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="@dimen/dp_8"
-                            android:ellipsize="end"
-                            android:lines="1"
-                            android:text="￥220" />
-
-                    </LinearLayout>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
 
-                </LinearLayout>
-
-            </LinearLayout>
-        </LinearLayout>
-
-
-    </androidx.cardview.widget.CardView>
-
-    <!--item end-->
+    <com.qmuiteam.qmui.widget.QMUIEmptyView
+        android:id="@+id/discount_goods_empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:qmui_btn_text="点击重试"
+        app:qmui_title_text="暂无数据" />
 
 </LinearLayout>

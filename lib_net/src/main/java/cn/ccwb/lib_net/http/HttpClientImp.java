@@ -505,7 +505,7 @@ public class HttpClientImp implements IHttpClient {
             String message = jsonObject.optString("message");
 //            Log.e(TAG, "message = " + message + "  responseBody = " + responseBody + " jsonObject = " + jsonObject);
             //其他
-            if (jsonObject.optInt("respCode") == 300) {
+            if (jsonObject.optInt("code") == 300) {
                 //token 过期
                 //去登陆
                 new Timer().schedule(new TimerTask() {
@@ -515,25 +515,25 @@ public class HttpClientImp implements IHttpClient {
                                 .navigation();
                     }
                 }, 500);
-                throw new ApiException(jsonObject.optInt("respCode"), "登录过期");
+                throw new ApiException(jsonObject.optInt("code"), "登录过期");
             }
-            if (jsonObject.optInt("respCode") == 1111) {
+            if (jsonObject.optInt("code") == 1111) {
                 //token 过期获取新动向的token
-                throw new ApiException(jsonObject.optInt("respCode"), message);
+                throw new ApiException(jsonObject.optInt("code"), message);
             }
 
-            if (jsonObject.optInt("respCode") == 101) {
+            if (jsonObject.optInt("code") == 101) {
                 //未知错误
-                throw new ApiException(jsonObject.optInt("respCode"), message);
+                throw new ApiException(jsonObject.optInt("code"), message);
             }
 
             //失败
-            if (jsonObject.optInt("respCode") == -1) {
+            if (jsonObject.optInt("code") == -1) {
                 //未知错误
-                throw new ApiException(jsonObject.optInt("respCode"), message);
+                throw new ApiException(jsonObject.optInt("code"), message);
             }
             //成功
-            if (jsonObject.optInt("respCode") == 0) {
+            if (jsonObject.optInt("code") == 200) {
                     /*//data不是json格式
                     if (!isValidJson(jsonObject.optString("data"))) {
                         Log.e(TAG, "apply: 不是json格式" );
@@ -555,7 +555,7 @@ public class HttpClientImp implements IHttpClient {
         public InputStream apply(ResponseBody responseBody) throws Exception {
             JSONObject jsonObject = new JSONObject(responseBody.string());
             String message = jsonObject.optString("message");
-            if (jsonObject.optInt("respCode") == 300) {
+            if (jsonObject.optInt("code") == 300) {
                 //token 过期
                 //去登陆
                 new Timer().schedule(new TimerTask() {
@@ -565,25 +565,25 @@ public class HttpClientImp implements IHttpClient {
                                 .navigation();
                     }
                 }, 500);
-                throw new ApiException(jsonObject.optInt("respCode"), "登录过期");
+                throw new ApiException(jsonObject.optInt("code"), "登录过期");
             }
-            if (jsonObject.optInt("respCode") == 1111) {
+            if (jsonObject.optInt("code") == 1111) {
                 //token 过期获取新动向的token
-                throw new ApiException(jsonObject.optInt("respCode"), message);
+                throw new ApiException(jsonObject.optInt("code"), message);
             }
 
-            if (jsonObject.optInt("respCode") == 101) {
+            if (jsonObject.optInt("code") == 101) {
                 //未知错误
-                throw new ApiException(jsonObject.optInt("respCode"), message);
+                throw new ApiException(jsonObject.optInt("code"), message);
             }
 
             //失败
-            if (jsonObject.optInt("respCode") == -1) {
+            if (jsonObject.optInt("code") == -1) {
                 //未知错误
-                throw new ApiException(jsonObject.optInt("respCode"), message);
+                throw new ApiException(jsonObject.optInt("code"), message);
             }
             //成功
-            if (jsonObject.optInt("respCode") == 0) {
+            if (jsonObject.optInt("code") == 200) {
 
                 return responseBody.byteStream();
             }

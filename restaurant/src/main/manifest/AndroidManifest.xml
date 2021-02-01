@@ -1,0 +1,17 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.ccwb.cloud.restaurant">
+
+    <application android:usesCleartextTraffic="true">
+
+        <meta-data
+            android:name="cn.ccwb.cloud.restaurant.config.RestaurantModuleConfig"
+            android:value="ConfigModule" />
+
+        <activity
+            android:name=".activity.RestaurantContainerActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation|keyboardHidden"
+            android:screenOrientation="portrait" />
+
+    </application>
+
+</manifest>

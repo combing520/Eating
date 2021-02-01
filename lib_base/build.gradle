@@ -145,7 +145,7 @@ dependencies {
     api rootProject.ext.dependencies["banner"]
     api rootProject.ext.dependencies["shimmerlayout"]
     api rootProject.ext.dependencies["lifecycle_runtime"]
-    api rootProject.ext.dependencies["animlogoview"]
+//    api rootProject.ext.dependencies["animlogoview"]
     api rootProject.ext.dependencies["aspectj"]
     api rootProject.ext.dependencies["AndRatingBar"]
 //    api rootProject.ext.dependencies["live_eventBus"]

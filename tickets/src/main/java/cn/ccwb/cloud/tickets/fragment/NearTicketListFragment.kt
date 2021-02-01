@@ -3,7 +3,9 @@ package cn.ccwb.cloud.tickets.fragment
 import android.app.Application
 import android.view.LayoutInflater
 import android.view.View
+import androidx.lifecycle.Observer
 import cn.ccwb.cloud.tickets.R
+import cn.ccwb.cloud.tickets.adapter.TicketsAdapter
 import cn.ccwb.cloud.tickets.appliction.TicketsAppContext
 import cn.ccwb.cloud.tickets.databinding.LibTicketsNearDiscountToolbarBinding
 import cn.ccwb.cloud.tickets.databinding.LibTicketsNearFragmentDiscountBinding
@@ -14,6 +16,7 @@ import cn.ccwb.lib_base.mvvm.BaseViewPro
 import cn.ccwb.lib_service.RouterPath
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
+import com.blankj.utilcode.util.LogUtils
 import com.blankj.utilcode.util.ToastUtils
 import com.gyf.immersionbar.ImmersionBar
 
@@ -25,6 +28,8 @@ class NearTicketListFragment : BaseFragmentWithViewModel<TicketsViewModel>(), Ba
 
     private lateinit var mToolBar: LibTicketsNearDiscountToolbarBinding
     private lateinit var mView: LibTicketsNearFragmentDiscountBinding
+
+    private lateinit var mAdapter: TicketsAdapter
 
     override fun setViewModel(): Class<TicketsViewModel>? {
         return TicketsViewModel::class.java
@@ -47,6 +52,20 @@ class NearTicketListFragment : BaseFragmentWithViewModel<TicketsViewModel>(), Ba
 
     override fun initView() {
         ImmersionBar.with(this).statusBarColor(R.color.colorWhite).statusBarDarkFont(true).init()
+        mAdapter = TicketsAdapter(R.layout.lib_tickets_near_item, null);
+        mView.nearRecycle.adapter = mAdapter
+
+        mViewModel?.mDiscountGoodsList?.observe(viewLifecycleOwner, Observer {
+            if (!it.isNullOrEmpty()) {
+                LogUtils.e("不为空！！！")
+                mAdapter.setList(it)
+
+            } else {
+                LogUtils.e("为空！！！")
+
+            }
+        })
+        mViewModel?.getGoodsDiscountComboInfo("voucher", 0, 5000, "default")
     }
 
     override fun initData() {
@@ -63,16 +82,17 @@ class NearTicketListFragment : BaseFragmentWithViewModel<TicketsViewModel>(), Ba
 
     override fun hideOtherView() {
     }
-
     override fun showMsg(s: String) {
+        showToastTop(s)
     }
 
     override fun showLoading(s: String) {
+        showCenterTips(s, TipsType.LOADING)
     }
 
     override fun hideLoading() {
+        hideCenterTips()
     }
-
     @AopOnclick
     private fun goToPage(pathName: String, id: String) {
         if (RouterPath.matchName2Path(pathName).equals(RouterPath.ERROR_PAGE)) {
@@ -85,7 +105,6 @@ class NearTicketListFragment : BaseFragmentWithViewModel<TicketsViewModel>(), Ba
                 .navigation()
         }
     }
-
     override fun onDestroyView() {
         super.onDestroyView()
         ImmersionBar.destroy(this)

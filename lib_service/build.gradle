@@ -59,6 +59,7 @@ dependencies {
 
     api 'com.amap.api:3dmap:latest.integration'
     api 'com.amap.api:location:latest.integration'
+    api 'com.amap.api:search:latest.integration'
     //arouter
     api rootProject.ext.dependencies["room"]
     api rootProject.ext.dependencies["room_rxjava2"]

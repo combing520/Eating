@@ -1,23 +1,31 @@
 package cn.ccwb.cloud.eating.app
 
+import android.Manifest
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import cn.ccwb.lib_service.RouterPath
 import com.alibaba.android.arouter.facade.Postcard
 import com.alibaba.android.arouter.facade.callback.NavCallback
 import com.alibaba.android.arouter.launcher.ARouter
+//import com.seagazer.animlogoview.AnimLogoView
+import com.tbruyelle.rxpermissions2.RxPermissions
+import cn.ccwb.lib_base.utils.PermissionUtil
+import cn.ccwb.lib_base.utils.PermissionUtil.RequestPermission
 import com.blankj.utilcode.util.LogUtils
-import com.seagazer.animlogoview.AnimLogoView
-import kotlinx.android.synthetic.main.activity_splash.*
 
 /**
  * 闪屏页
  */
 class SplashActivity : AppCompatActivity() {
 
-    private lateinit var logo: AnimLogoView
+    private val permissions = arrayOf(
+        Manifest.permission.ACCESS_FINE_LOCATION
+    )
+
+//    private lateinit var logo: AnimLogoView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
@@ -25,19 +33,37 @@ class SplashActivity : AppCompatActivity() {
     }
 
     private fun init() {
-        logo = findViewById(R.id.animLogo)
-        playAnimation()
+//        logo = findViewById(R.id.animLogo)
+        //权限请求
+        requestPermission(permissions)
     }
 
-    private fun playAnimation() {
-        logo.addOffsetAnimListener(object : AnimatorListenerAdapter() {
-            override fun onAnimationEnd(animation: Animator?) {
-                super.onAnimationEnd(animation)
+    private fun requestPermission(permissionsAll: Array<String>) {
+        PermissionUtil.requestPermission(object : RequestPermission {
+            override fun onRequestPermissionSuccess() {
                 goMain()
             }
 
-        })
-        logo.startAnimation()
+            override fun onRequestPermissionFailure(permissions: List<String>?) {
+                goMain()
+            }
+
+            override fun onRequestPermissionFailureWithAskNeverAgain(permissions: List<String>?) {
+                goMain()
+            }
+        }, RxPermissions(this), *permissionsAll)
+    }
+
+
+    private fun playAnimation() {
+//        logo.addOffsetAnimListener(object : AnimatorListenerAdapter() {
+//            override fun onAnimationEnd(animation: Animator?) {
+//                super.onAnimationEnd(animation)
+//                goMain()
+//            }
+//
+//        })
+//        logo.startAnimation()
     }
 
     /**

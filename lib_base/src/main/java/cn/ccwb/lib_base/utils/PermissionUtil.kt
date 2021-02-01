@@ -1,10 +1,9 @@
 package cn.ccwb.lib_base.utils
 
-import android.annotation.SuppressLint
 import com.tbruyelle.rxpermissions2.RxPermissions
 import java.util.*
 
-class PermissionUtil private constructor() {
+public class PermissionUtil private constructor() {
     interface RequestPermission {
         /**
          * 权限请求成功
@@ -28,7 +27,6 @@ class PermissionUtil private constructor() {
 
     companion object {
         const val TAG = "Permission"
-        @JvmStatic
         fun requestPermission(requestPermission: RequestPermission, rxPermissions: RxPermissions, vararg permissions: String) {
             if (permissions == null || permissions.size == 0) {
                 return

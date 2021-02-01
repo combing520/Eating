@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragment.RestaurantDetailFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_10"
+                android:layout_marginEnd="@dimen/dp_10"
+                android:background="@drawable/bg_shape_radius_white"
+                android:orientation="vertical"
+                android:paddingStart="@dimen/dp_10"
+                android:paddingTop="@dimen/dp_16"
+                android:paddingEnd="@dimen/dp_10"
+                android:paddingBottom="@dimen/dp_16">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <cn.ccwb.lib_base.view.RoundAngleImageView
+                        android:id="@+id/shop_img"
+                        android:layout_width="86dp"
+                        android:layout_height="86dp"
+                        android:layout_marginEnd="@dimen/dp_8"
+                        android:scaleType="centerCrop"
+                        app:roundHeight="@dimen/dp_4"
+                        app:roundWidth="@dimen/dp_4" />
+
+                    <TextView
+                        android:id="@+id/shop_title_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/shop_img"
+                        android:ellipsize="end"
+                        android:lines="1"
+                        android:textColor="@color/colorTxtTitle"
+                        android:textSize="@dimen/sp_16" />
+
+                    <LinearLayout
+                        android:id="@+id/rate_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/shop_title_tv"
+                        android:layout_marginTop="@dimen/dp_6"
+                        android:layout_toRightOf="@id/shop_img"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <per.wsj.library.AndRatingBar
+                            android:id="@+id/rateBar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="13dp"
+                            android:isIndicator="true"
+                            android:numStars="5"
+                            android:rating="1.5"
+                            app:bgColor="#dfdfdf"
+                            app:starColor="#FFD700" />
+
+                        <TextView
+                            android:id="@+id/rate_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dp_4"
+                            android:layout_marginEnd="@dimen/dp_4"
+                            android:ellipsize="end"
+                            android:lines="1"
+                            android:textColor="@color/colorTxtContent"
+                            android:textSize="@dimen/sp_12" />
+
+                        <TextView
+                            android:id="@+id/comment_cnt_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:lines="1"
+                            android:text="(0人论)"
+                            android:textColor="@color/colorTxtContent"
+                            android:textSize="@dimen/sp_12" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/cast_cnt_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/rate_layout"
+                        android:layout_marginTop="@dimen/dp_8"
+                        android:layout_toRightOf="@id/shop_img"
+                        android:ellipsize="end"
+                        android:lines="1"
+                        android:textColor="@color/colorTxtContent"
+                        android:textSize="@dimen/sp_12" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/shop_statue_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:lines="1"
+                        android:padding="@dimen/dp_4"
+                        android:textColor="@color/colorTxtContent"
+                        android:textSize="@dimen/sp_12" />
+
+                    <TextView
+                        android:id="@+id/shop_time_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_8"
+                        android:layout_marginEnd="@dimen/dp_8"
+                        android:ellipsize="end"
+                        android:lines="1"
+                        android:padding="@dimen/dp_4"
+                        android:textColor="@color/colorTxtContent"
+                        android:textSize="@dimen/sp_12" />
+
+                    <TextView
+                        android:id="@+id/shop_more_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableRight="@drawable/lib_goods_right"
+                        android:ellipsize="end"
+                        android:lines="1"
+                        android:padding="@dimen/dp_4"
+                        android:text="更多信息"
+                        android:textColor="@color/colorTxtContent"
+                        android:textSize="@dimen/sp_12" />
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10">
+
+                    <TextView
+                        android:id="@+id/location_address_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:lines="1"
+                        android:text="正义坊北馆2楼"
+                        android:textColor="@color/colorTxtTitle"
+                        android:textSize="@dimen/sp_16" />
+
+                    <TextView
+                        android:id="@+id/address_describe_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/location_address_tv"
+                        android:layout_marginTop="@dimen/dp_4"
+                        android:ellipsize="end"
+                        android:lines="1"
+                        android:text="距你682米，步行10分钟"
+                        android:textColor="@color/colorTxtContent"
+                        android:textSize="@dimen/sp_12" />
+
+                    <TextView
+                        android:id="@+id/call_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:drawableLeft="@drawable/ic_tel" />
+
+                    <TextView
+                        android:id="@+id/car_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@id/call_tv"
+                        android:drawableLeft="@drawable/ic_car"
+                        android:text="到店"
+                        android:layout_marginEnd="@dimen/dp_8"
+                        android:textColor="#FA541C"
+                        android:textSize="@dimen/sp_10" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</LinearLayout>

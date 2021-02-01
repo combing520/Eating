@@ -2,7 +2,7 @@ ext {
     android = [
             compileSdkVersion: 29,
             buildToolsVersion: "29.0.3",
-            minSdkVersion    : 22,
+            minSdkVersion    : 21,
             targetSdkVersion : 29,
             versionCode      : 1,
             versionName      : "1.0.0",
@@ -133,7 +133,7 @@ ext {
             //工具
             "MZBannerView"                 : "com.github.pinguo-zhouwei:MZBannerView:v2.0.2",
             "BaseRecyclerViewAdapterHelper": "com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.3",
-            "xpopup"                       : "com.lxj:xpopup:1.8.18-beta7",
+            "xpopup"                       : "com.lxj:xpopup:2.2.14",
             "utilcode"                     : "com.blankj:utilcodex:1.28.2",
             "qmui"                         : "com.qmuiteam:qmui:2.0.0-alpha07",
             "qmui-arch"                    : "com.qmuiteam:arch:0.7.0",
@@ -190,7 +190,7 @@ ext {
             "banner"                       : "com.youth.banner:banner:2.1.0",
             "shimmerlayout"                : "io.supercharge:shimmerlayout:2.1.0",
             "lifecycle_runtime"            : "androidx.lifecycle:lifecycle-runtime-ktx:2.2.0-alpha01",
-            "animlogoview"                 : "com.github.seagazer:animlogoview:1.0.2",
+//            "animlogoview"                 : "com.github.seagazer:animlogoview:1.0.2",
             "aspectj"                      : "org.aspectj:aspectjrt:1.8.13",
             "AndRatingBar"                 : "com.github.giswangsj:AndRatingBar:1.0.5"
 

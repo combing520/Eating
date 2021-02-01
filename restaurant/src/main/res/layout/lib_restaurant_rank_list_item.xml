@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dp_10"
+    android:background="@drawable/bg_shape_radius_white"
+    android:paddingStart="@dimen/dp_10"
+    android:paddingTop="@dimen/dp_16"
+    android:paddingEnd="@dimen/dp_10"
+    android:paddingBottom="@dimen/dp_16">
+
+    <cn.ccwb.lib_base.view.RoundAngleImageView
+        android:id="@+id/shop_img"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginRight="@dimen/dp_8"
+        app:roundHeight="@dimen/dp_6"
+        app:roundWidth="@dimen/dp_6" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/name_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:lines="1"
+            android:text="菌彩野生菌火锅"
+            android:textColor="@color/colorTxtTitle"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_6"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <per.wsj.library.AndRatingBar
+                android:id="@+id/score_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="13dp"
+                android:isIndicator="true"
+                android:numStars="5"
+                android:rating="1.5"
+                app:bgColor="#dfdfdf"
+                app:starColor="#FFD700" />
+
+            <TextView
+                android:id="@+id/score_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/dp_4"
+                android:paddingEnd="@dimen/dp_4"
+                android:text="1.5分"
+                android:textColor="@color/colorTxtContent"
+                android:textSize="@dimen/sp_12" />
+
+            <TextView
+                android:id="@+id/cost_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingEnd="@dimen/dp_4"
+                android:text="￥57/人"
+                android:textColor="@color/colorTxtContent"
+                android:textSize="@dimen/sp_12" />
+
+            <TextView
+                android:id="@+id/distance_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1.3km"
+                android:textColor="@color/colorTxtContent"
+                android:textSize="@dimen/sp_12" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_6"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/type_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/dp_4"
+                android:paddingEnd="@dimen/dp_4"
+                android:text="火锅"
+                android:textColor="@color/colorTxtContent"
+                android:textSize="@dimen/sp_12" />
+
+            <TextView
+                android:id="@+id/type_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="大观楼"
+                android:textColor="@color/colorTxtContent"
+                android:textSize="@dimen/sp_12" />
+        </LinearLayout>
+
+        <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+            android:id="@+id/describe_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_6"
+            android:ellipsize="end"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:lines="1"
+            android:paddingStart="@dimen/dp_10"
+            android:paddingTop="@dimen/dp_2"
+            android:paddingEnd="@dimen/dp_10"
+            android:paddingBottom="@dimen/dp_2"
+            android:text="大观楼快餐小吃热门第一名"
+            android:textColor="#FF7C7C9B"
+            app:qmui_backgroundColor="#f0f0f4"
+            app:qmui_borderColor="@color/colorTransport"
+            app:qmui_radius="@dimen/dp_10" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_6"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:background="@drawable/ic_discount" />
+
+            <TextView
+                android:id="@+id/discount_describe_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:lines="1"
+                android:paddingStart="@dimen/dp_6"
+                android:text="单人餐20元 2-3人餐178元 3-4人餐199元"
+                android:textColor="@color/colorTxtContent"
+                android:textSize="@dimen/sp_12" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_6"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:background="@drawable/ic_ticket" />
+
+            <TextView
+                android:id="@+id/discount_info_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:lines="1"
+                android:paddingStart="@dimen/dp_6"
+                android:text="79代100"
+                android:textColor="@color/colorTxtContent"
+                android:textSize="@dimen/sp_12" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

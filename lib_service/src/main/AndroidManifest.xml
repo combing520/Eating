@@ -2,7 +2,14 @@
     package="cn.ccwb.lib_service">
 
     <application>
+        <meta-data
+            android:name="cn.ccwb.lib_service.config.ServiceModuleConfig"
+            android:value="ConfigModule" />
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="0f0c34936dc0455b936a2b8090652de8" />
 
+        <service android:name="com.amap.api.location.APSService" />
 
     </application>
 </manifest>
