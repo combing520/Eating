@@ -1,6 +1,7 @@
 package cn.ccwb.cloud.eating.app.application
 import android.app.Application
 import android.content.Context
+import androidx.appcompat.app.AppCompatDelegate
 import cn.ccwb.lib_base.AppDelegate
 
 //import com.jeremyliao.liveeventbus.LiveEventBus
@@ -17,6 +18,7 @@ class AppContext : Application() {
         super.onCreate()
         mApplication = this
         mAppDelegate?.onCreate(this)
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
 
 //        LiveEventBus.config()
 //            .autoClear(true)

@@ -16,6 +16,7 @@ import cn.ccwb.lib_service.RouterPath
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
 import com.blankj.utilcode.util.LogUtils
+import com.gyf.immersionbar.ImmersionBar
 
 /**
  * 餐厅排行
@@ -54,11 +55,14 @@ class RestaurantRankListFragment : BaseFragmentWithViewModel<RestaurantViewModel
         mViewModel?.mShopInfoList?.observe(viewLifecycleOwner, Observer {
             if (!it.isNullOrEmpty()) {
                 LogUtils.e("不为空！！！")
+                mView.shopEmpty.visibility = View.GONE
+                mView.shopRecycle.visibility = View.VISIBLE
                 mAdapter.setList(it)
 
             } else {
                 LogUtils.e("为空！！！")
-
+                mView.shopRecycle.visibility = View.GONE
+                mView.shopEmpty.visibility = View.VISIBLE
             }
         })
         mViewModel?.getShopInfoList("",0,5000,"default",1)
@@ -74,6 +78,10 @@ class RestaurantRankListFragment : BaseFragmentWithViewModel<RestaurantViewModel
            val item =  mAdapter.getItem(position)
             goToDetail(item.id.toString())
         }
+        mView.shopEmpty.setButton("点击重试") {
+            mViewModel?.getShopInfoList("",0,5000,"default",1)
+        }
+
     }
 
     private fun  goToDetail(id:String){
@@ -100,5 +108,9 @@ class RestaurantRankListFragment : BaseFragmentWithViewModel<RestaurantViewModel
         hideCenterTips()
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        ImmersionBar.destroy(this)
+    }
 
 }

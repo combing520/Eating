@@ -93,5 +93,11 @@
         android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
+    <com.qmuiteam.qmui.widget.QMUIEmptyView
+        android:id="@+id/shop_empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:qmui_btn_text="点击重试"
+        app:qmui_title_text="暂无数据" />
 
 </LinearLayout>

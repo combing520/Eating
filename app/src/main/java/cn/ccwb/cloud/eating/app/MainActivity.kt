@@ -3,6 +3,7 @@ package cn.ccwb.cloud.eating.app
 import android.os.Bundle
 import android.view.Gravity
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import cn.ccwb.lib_base.aop.click.AopOnclick
 import cn.ccwb.lib_base.utils.GlideUtils
 import cn.ccwb.lib_service.RouterPath
@@ -38,9 +39,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun initStatusBarInfo() {
         ImmersionBar.with(this)
-            .statusBarDarkFont(true)
-            .statusBarColor(R.color.white)
-            .fitsSystemWindows(true)
+            .statusBarDarkFont(AppCompatDelegate.getDefaultNightMode() != AppCompatDelegate.MODE_NIGHT_YES)
+//            .statusBarColor(R.color.color_gray)
             .init()
     }
 

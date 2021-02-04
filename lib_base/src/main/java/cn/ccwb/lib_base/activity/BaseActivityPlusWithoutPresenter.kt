@@ -3,6 +3,9 @@ package cn.ccwb.lib_base.activity
 import android.os.Bundle
 import android.view.Gravity
 import android.view.MotionEvent
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_NO
+import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_YES
 import cn.ccwb.lib_base.R
 import cn.ccwb.lib_base.databinding.LibUiBaseActivityBinding
 import cn.ccwb.lib_base.mvp.IPresenter
@@ -140,4 +143,16 @@ abstract class BaseActivityPlusWithoutPresenter : SupportActivity() {
         }
         return super.dispatchTouchEvent(ev)
     }
+
+    /**
+     * 是否显示夜间模式
+     */
+    fun setNightMode(isShowNightMode: Boolean) {
+        if (isShowNightMode) {
+            AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_YES)
+        } else {
+            AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_NO)
+        }
+    }
 }
+

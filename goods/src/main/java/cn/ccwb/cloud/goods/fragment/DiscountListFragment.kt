@@ -25,7 +25,6 @@ class DiscountListFragment : BaseFragmentWithViewModel<DiscountViewModel>(), Bas
 
     private lateinit var mToolBar: LibGoodsDiscountToolbarBinding
     private lateinit var mView: LibGoodsFragmentDiscountBinding
-
     private lateinit var mAdapter: DiscountGoodsAdapter
 
     override fun initToolBar(inflater: LayoutInflater?): View? {
@@ -60,12 +59,10 @@ class DiscountListFragment : BaseFragmentWithViewModel<DiscountViewModel>(), Bas
                 mView.discountGoodsEmpty.visibility = View.GONE
                 mView.discountGoodsRecycle.visibility = View.VISIBLE
                 mAdapter.setList(it)
-
             } else {
                 LogUtils.e("为空！！！")
                 mView.discountGoodsRecycle.visibility = View.GONE
                 mView.discountGoodsEmpty.visibility = View.VISIBLE
-
             }
         })
     }
@@ -77,11 +74,9 @@ class DiscountListFragment : BaseFragmentWithViewModel<DiscountViewModel>(), Bas
         mToolBar.baseFragmentBack.setOnClickListener {
             _mActivity.finish()
         }
-        mView.discountGoodsEmpty.setButton("点击重试", {
-
+        mView.discountGoodsEmpty.setButton("点击重试") {
             mViewModel?.getGoodsDiscountComboInfo("voucher", 0, 5000, "default")
-        })
-
+        }
         mToolBar.address.setOnClickListener {
             ARouter.getInstance().build(RouterPath.PAGE_GUIDE_TICKETS)
                 .withString(RouterPath.TAG_PATH_FRAGMENT, RouterPath.matchName2Path("优惠券详情"))
@@ -102,5 +97,4 @@ class DiscountListFragment : BaseFragmentWithViewModel<DiscountViewModel>(), Bas
     override fun hideLoading() {
         hideCenterTips()
     }
-
 }

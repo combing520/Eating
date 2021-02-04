@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorToastBg">#88000000</color>
-    <color name="colorBlack">#000000</color>
-    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlack">#FFFFFF</color>
+    <color name="colorWhite">#000000</color>
     <color name="icon_blue_light">#5094f2</color>
     <color name="colorPrimary">#FFFFFF</color>
     <color name="colorPrimaryDark">#FFFFFF</color>
-    <color name="whitesmoke">#f5f5f5</color> <!-- 烟白色 -->
+    <color name="whitesmoke">#88000000</color>
 
 
     <!--倒计时默认背景颜色-->
@@ -14,11 +14,11 @@
     <!--倒计时背景点击颜色-->
     <color name="colorTimerPress">#666666</color>
     <!--title文字颜色-->
-    <color name="colorTxtTitle">#222222</color>
+    <color name="colorTxtTitle">#FFFFFF</color>
     <!--content文字颜色-->
-    <color name="colorTxtContent">#666666</color>
+    <color name="colorTxtContent">#FFFAFA</color>
     <!--label文字颜色-->
-    <color name="colorTxtLabel">#999999</color>
+    <color name="colorTxtLabel">#FAF0E6</color>
     <!--透明颜色-->
     <color name="colorTransport">#0000</color>
     <!--半透明颜色-->
@@ -73,11 +73,11 @@
     <color name="colorHelper_square_from_ratio_background">@color/app_color_blue</color>
     <color name="colorHelper_square_to_ratio_background">@color/app_color_theme_3</color>
 
-    <color name="color_edit_home_fill">#F4F5F9</color>
+    <color name="color_edit_home_fill">#696969</color>
 
     <color name="colorAccent">#03DAC5</color>
     <color name="transparent_complete">#00FFFFFF</color>
-    <color name="themeColor">@color/white</color>
+    <color name="themeColor">@color/colorTxtTitle</color>
 
     <!--========-->
     <!-- 背景色 -->
@@ -86,8 +86,6 @@
     <color name="common_bg_bottom">#2A3346</color>
     <color name="common_head_title_text_color">#4f4f4f</color>
     <color name="divider_color">#E8E9E8</color>
-    <color name="divider_color2">#f5f5f5</color>
-
-    <color name="homeCardTitleColor">#E3E3F8</color>
-
+    <color name="divider_color2">#F5F5F5</color>
+    <color name="homeCardTitleColor">#424242</color>
 </resources>

@@ -51,12 +51,8 @@ class RestaurantDetailFragment : BaseFragmentWithViewModel<RestaurantViewModel>(
         mToolBar = LibRestaurantDetailToolbarBinding.inflate(inflater!!)
         return mToolBar.root
     }
-
     override fun initView() {
-        ImmersionBar.with(this).statusBarDarkFont(true)
-            .statusBarColor(R.color.qmui_config_color_background).init()
     }
-
     override fun initData() {
         LogUtils.e("店铺详情 id = $mId")
         mViewModel?.mShopInfoDetailEntity?.observe(viewLifecycleOwner, Observer {
@@ -111,8 +107,4 @@ class RestaurantDetailFragment : BaseFragmentWithViewModel<RestaurantViewModel>(
         hideCenterTips()
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        ImmersionBar.destroy(this)
-    }
 }

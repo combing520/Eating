@@ -54,7 +54,7 @@ abstract class BaseFragmentWithViewModel<T : BaseViewModel<*>?> : SupportFragmen
     private var isFirstLoad = true
     override fun initImmersionBar() {
         ImmersionBar.with(this).init()
-        ImmersionBar.with(this).statusBarColor(R.color.colorPrimary).init()
+        ImmersionBar.with(this).statusBarColor(R.color.colorWhite).init()
         if (ImmersionBar.isSupportStatusBarDarkFont()) {
             ImmersionBar.with(this).statusBarDarkFont(true, 0.0f).init()
         }

@@ -6,7 +6,6 @@
     android:layout_height="wrap_content"
     android:layout_marginStart="@dimen/dp_8"
     android:layout_marginTop="@dimen/dp_8"
-    app:cardBackgroundColor="@color/colorWhite"
     app:cardCornerRadius="@dimen/dp_5"
     app:cardUseCompatPadding="true">
 
@@ -88,7 +87,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_16"
-            android:background="#FFF8F8FA"
+            android:background="@color/colorNearItem"
             android:paddingStart="@dimen/dp_8"
             android:paddingTop="@dimen/dp_16"
             android:paddingEnd="@dimen/dp_8"

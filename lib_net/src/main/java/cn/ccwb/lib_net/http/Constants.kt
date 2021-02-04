@@ -58,19 +58,19 @@ object Constants {
      * 经度
      */
     const val CW_LONGITUDE_STR: String = "lng"
-    var CW_LONGITUDE: Double = 102.696104
+    var CW_LONGITUDE: Double = 102.692006
 
     /**
      * 纬度
      */
     const val CW_LATITUDE_STR: String = "lat"
-    var CW_LATITUDE: Double = 25.041404
+    var CW_LATITUDE: Double = 24.997584
 
     /**
      * 城市行政码
      */
     const val AD_CODE_STR = "adcode"
-    var AD_CODE: String = ""
+    var AD_CODE: String = "530112"
 
     /**
      * IP

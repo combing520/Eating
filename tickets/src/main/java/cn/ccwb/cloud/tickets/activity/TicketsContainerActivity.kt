@@ -1,5 +1,7 @@
 package cn.ccwb.cloud.tickets.activity
 
+import androidx.appcompat.app.AppCompatDelegate
+import cn.ccwb.lib_base.R
 import cn.ccwb.lib_base.activity.BaseActivityPlusWithoutPresenter
 import cn.ccwb.lib_service.RouterPath
 import com.alibaba.android.arouter.facade.annotation.Autowired
@@ -62,8 +64,8 @@ class TicketsContainerActivity : BaseActivityPlusWithoutPresenter() {
      */
     private fun initStatusBar(isFitSystem: Boolean) {
         ImmersionBar.with(this@TicketsContainerActivity)
-            .statusBarDarkFont(true, 0.0f)
-            .transparentStatusBar()
+            .statusBarColor(R.color.colorWhite)
+            .statusBarDarkFont(AppCompatDelegate.getDefaultNightMode() != AppCompatDelegate.MODE_NIGHT_YES)
             .init()
         mRootViewBinding!!.root.fitsSystemWindows = isFitSystem
     }

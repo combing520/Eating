@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorWhite"
     android:orientation="vertical"
+    android:fitsSystemWindows="true"
     tools:context="cn.ccwb.cloud.eating.app.MainActivity">
 
 
@@ -29,8 +30,8 @@
             android:paddingTop="@dimen/dp_4"
             android:paddingBottom="@dimen/dp_4"
             android:text="定位中"
-            android:textColor="@color/colorTxtTitle"
-            android:textSize="@dimen/sp_14" />
+            android:textColor="@color/colorTxtContent"
+            android:textSize="@dimen/sp_12" />
 
         <TextView
             android:layout_width="0dp"
@@ -262,6 +263,7 @@
                 android:layout_marginTop="@dimen/dp_16"
                 android:layout_marginEnd="@dimen/dp_16"
                 android:text="特色云南"
+                android:textColor="@color/colorTxtTitle"
                 android:textSize="@dimen/sp_20"
                 android:textStyle="bold" />
 
@@ -399,6 +401,7 @@
                 android:layout_marginTop="@dimen/dp_16"
                 android:layout_marginEnd="@dimen/dp_16"
                 android:text="最近上新"
+                android:textColor="@color/colorTxtTitle"
                 android:textSize="@dimen/sp_20"
                 android:textStyle="bold" />
 
@@ -419,7 +422,7 @@
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="#E3E3F8"
+                        android:background="@color/homeCardTitleColor"
                         android:padding="@dimen/dp_8">
 
                         <TextView
@@ -427,7 +430,7 @@
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
                             android:text="商城"
-                            android:textColor="@color/colorBlack"
+                            android:textColor="@color/colorTxtTitle"
                             android:textSize="@dimen/sp_22"
                             android:textStyle="bold" />
 
@@ -439,7 +442,7 @@
                             android:drawableRight="@drawable/ic_right_purple"
                             android:gravity="center_vertical"
                             android:text="更多"
-                            android:textColor="#8282A5"
+                            android:textColor="@color/colorTxtLabel"
                             android:textSize="@dimen/sp_12"
                             android:textStyle="bold" />
                     </RelativeLayout>
@@ -473,7 +476,7 @@
                                 android:ellipsize="end"
                                 android:lines="1"
                                 android:text="商品名称商品名称"
-                                android:textColor="#222222"
+                                android:textColor="@color/colorTxtTitle"
                                 android:textSize="@dimen/sp_12" />
 
                             <TextView
@@ -510,7 +513,7 @@
                                 android:ellipsize="end"
                                 android:lines="1"
                                 android:text="商品名称商品名称"
-                                android:textColor="#222222"
+                                android:textColor="@color/colorTxtTitle"
                                 android:textSize="@dimen/sp_12" />
 
                             <TextView
@@ -545,7 +548,7 @@
                                 android:ellipsize="end"
                                 android:lines="1"
                                 android:text="商品名称商品名称"
-                                android:textColor="#222222"
+                                android:textColor="@color/colorTxtTitle"
                                 android:textSize="@dimen/sp_12" />
 
                             <TextView
@@ -573,22 +576,22 @@
                 android:layout_marginEnd="@dimen/dp_16"
                 android:padding="@dimen/dp_5"
                 android:text="最近上新"
+                android:textColor="@color/colorTxtTitle"
                 android:textSize="@dimen/sp_20"
                 android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:layout_marginBottom="@dimen/dp_8"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/dp_8"
-                    android:layout_marginEnd="@dimen/dp_8"
-                    android:layout_marginBottom="@dimen/dp_8"
                     android:layout_weight="1"
                     app:cardCornerRadius="@dimen/dp_5"
                     app:cardUseCompatPadding="true">
@@ -623,7 +626,7 @@
                             android:ellipsize="end"
                             android:maxLines="2"
                             android:text="菌故.野生菌肚子鸡火锅(小西门店)"
-                            android:textColor="#222222"
+                            android:textColor="@color/colorTxtTitle"
                             android:textSize="@dimen/sp_12" />
 
                         <LinearLayout
@@ -691,9 +694,6 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/dp_8"
-                    android:layout_marginEnd="@dimen/dp_8"
-                    android:layout_marginBottom="@dimen/dp_8"
                     android:layout_weight="1"
                     app:cardCornerRadius="@dimen/dp_5"
                     app:cardUseCompatPadding="true">
@@ -729,7 +729,7 @@
                             android:ellipsize="end"
                             android:maxLines="2"
                             android:text="菌故.野生菌肚子鸡火锅(小西门店)"
-                            android:textColor="#222222"
+                            android:textColor="@color/colorTxtTitle"
                             android:textSize="@dimen/sp_12" />
 
                         <LinearLayout

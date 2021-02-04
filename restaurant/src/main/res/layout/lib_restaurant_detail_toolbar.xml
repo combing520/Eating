@@ -4,7 +4,7 @@
     android:id="@+id/base_fragment_toolbar"
     android:layout_width="match_parent"
     android:layout_height="@dimen/height_navigation"
-    android:background="#FFF4F5F9"
+    android:background="@color/colorWhite"
     android:fitsSystemWindows="true">
 
     <TextView
@@ -15,6 +15,7 @@
         android:drawableLeft="@drawable/ic_arrow_back"
         android:drawablePadding="@dimen/dp_10"
         android:gravity="center"
+        android:backgroundTint="@color/colorTxtTitle"
         android:paddingStart="@dimen/dp_10" />
 
     <TextView
@@ -25,6 +26,7 @@
         android:layout_centerVertical="true"
         android:layout_marginEnd="@dimen/dp_10"
         android:background="@drawable/ic_more"
+        android:backgroundTint="@color/colorTxtTitle"
         android:paddingEnd="@dimen/dp_10" />
 
 
@@ -34,6 +36,7 @@
         android:layout_height="30dp"
         android:layout_centerVertical="true"
         android:layout_marginRight="@dimen/dp_10"
+        android:backgroundTint="@color/colorTxtTitle"
         android:layout_toLeftOf="@id/ticket_detail_more"
         android:background="@drawable/ic_share"
         android:paddingEnd="@dimen/dp_24" />
@@ -47,6 +50,7 @@
         android:layout_toLeftOf="@id/ticket_detail_share"
         android:background="@drawable/ic_collection"
         android:paddingEnd="@dimen/dp_24"
+        android:backgroundTint="@color/colorTxtTitle"
         android:scaleType="centerCrop" />
 
 </RelativeLayout>

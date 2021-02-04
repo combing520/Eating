@@ -18,7 +18,6 @@ import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
 import com.blankj.utilcode.util.LogUtils
 import com.blankj.utilcode.util.ToastUtils
-import com.gyf.immersionbar.ImmersionBar
 
 /**
  * 附近好券
@@ -28,7 +27,6 @@ class NearTicketListFragment : BaseFragmentWithViewModel<TicketsViewModel>(), Ba
 
     private lateinit var mToolBar: LibTicketsNearDiscountToolbarBinding
     private lateinit var mView: LibTicketsNearFragmentDiscountBinding
-
     private lateinit var mAdapter: TicketsAdapter
 
     override fun setViewModel(): Class<TicketsViewModel>? {
@@ -51,18 +49,18 @@ class NearTicketListFragment : BaseFragmentWithViewModel<TicketsViewModel>(), Ba
     }
 
     override fun initView() {
-        ImmersionBar.with(this).statusBarColor(R.color.colorWhite).statusBarDarkFont(true).init()
         mAdapter = TicketsAdapter(R.layout.lib_tickets_near_item, null);
         mView.nearRecycle.adapter = mAdapter
-
         mViewModel?.mDiscountGoodsList?.observe(viewLifecycleOwner, Observer {
             if (!it.isNullOrEmpty()) {
                 LogUtils.e("不为空！！！")
+                mView.nearGoodsEmpty.visibility = View.GONE
+                mView.nearRecycle.visibility = View.VISIBLE
                 mAdapter.setList(it)
-
             } else {
                 LogUtils.e("为空！！！")
-
+                mView.nearRecycle.visibility = View.GONE
+                mView.nearGoodsEmpty.visibility = View.VISIBLE
             }
         })
         mViewModel?.getGoodsDiscountComboInfo("voucher", 0, 5000, "default")
@@ -78,10 +76,16 @@ class NearTicketListFragment : BaseFragmentWithViewModel<TicketsViewModel>(), Ba
         mToolBar.address.setOnClickListener {
             goToPage("优惠券详情", "")
         }
+
+        mView.nearGoodsEmpty.setButton("点击重试") {
+            mViewModel?.getGoodsDiscountComboInfo("voucher", 0, 5000, "default")
+        }
+
     }
 
     override fun hideOtherView() {
     }
+
     override fun showMsg(s: String) {
         showToastTop(s)
     }
@@ -93,6 +97,7 @@ class NearTicketListFragment : BaseFragmentWithViewModel<TicketsViewModel>(), Ba
     override fun hideLoading() {
         hideCenterTips()
     }
+
     @AopOnclick
     private fun goToPage(pathName: String, id: String) {
         if (RouterPath.matchName2Path(pathName).equals(RouterPath.ERROR_PAGE)) {
@@ -104,9 +109,5 @@ class NearTicketListFragment : BaseFragmentWithViewModel<TicketsViewModel>(), Ba
                 .withBoolean(RouterPath.TAG_FIT_SYSTEM, true)
                 .navigation()
         }
-    }
-    override fun onDestroyView() {
-        super.onDestroyView()
-        ImmersionBar.destroy(this)
     }
 }

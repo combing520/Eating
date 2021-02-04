@@ -1,3 +1,12 @@
 <resources>
+    <string name="time_down">%d 秒后跳过</string>
+    <string name="str_tab_home">首页</string>
+    <string name="str_tab_video">视频</string>
+    <string name="str_tab_paike">拍客</string>
+    <string name="str_tab_apps">应用号</string>
+    <string name="str_double_click_quit">再按一次退出吃堂</string>
+    <string name="str_failure_data_failure">数据获取失败</string>
+    <string name="str_loading">加载中</string>
+    <string name="str_img_hint">图片</string>
     <string name="app_name">吃堂</string>
 </resources>
